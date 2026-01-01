@@ -3,53 +3,75 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>콘서트 티켓 무료나눔 이벤트</title>
+  <title>콘서트 티켓 무료나눔</title>
+
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f5f5f5;
       margin: 0;
       padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(180deg, #f3f0ff, #ffffff);
     }
+
     h1 {
       text-align: center;
+      color: #4b2ca3;
       margin-bottom: 20px;
+      font-size: 22px;
     }
+
     .box {
-      background: #fff;
-      border-radius: 10px;
+      background: #ffffff;
+      border-radius: 14px;
       padding: 16px;
       margin-bottom: 16px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.08);
     }
+
+    .notice {
+      font-size: 13px;
+      color: #444;
+      line-height: 1.6;
+    }
+
     .ticket {
-      border: 1px solid #e0e0e0;
-      border-radius: 8px;
-      padding: 12px;
+      background: #faf8ff;
+      border: 1px solid #e6ddff;
+      border-radius: 12px;
+      padding: 14px;
       margin-bottom: 12px;
     }
+
     .ticket h3 {
       margin: 0 0 6px 0;
-      font-size: 16px;
+      font-size: 15px;
+      color: #3f2b96;
     }
-    .small {
+
+    .ticket p {
+      margin: 0;
       font-size: 13px;
       color: #555;
       line-height: 1.5;
     }
-    button {
+
+    .btn {
       width: 100%;
-      padding: 14px;
+      padding: 16px;
       border: none;
-      border-radius: 8px;
-      font-size: 15px;
+      border-radius: 14px;
+      font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
-    }
-    .tg-btn {
-      background: #2AABEE;
       color: #fff;
+      background: linear-gradient(135deg, #7f5cff, #ff6ec7);
+      cursor: pointer;
+      box-shadow: 0 6px 14px rgba(127,92,255,0.35);
     }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
     footer {
       text-align: center;
       font-size: 12px;
@@ -64,19 +86,19 @@
 <h1>🎫 콘서트 티켓 무료나눔</h1>
 
 <div class="box">
-  <h2>📌 이벤트 안내</h2>
-  <p class="small">
+  <div class="notice">
+    📌 <strong>이벤트 안내</strong><br>
     • 본 이벤트는 <strong>텔레그램 메시지 도착 순서 기준 선착순</strong>입니다.<br>
     • 티켓별 수량 소진 시 즉시 마감됩니다.<br>
     • 참여는 텔레그램 문의로만 받습니다.<br>
-    • 개인 주최 무료나눔 이벤트입니다.
-  </p>
+    • <strong>신생 대리티켓팅 업체 주최 이벤트</strong>입니다.
+  </div>
 </div>
 
 <div class="box">
   <div class="ticket">
     <h3>1️⃣ 프로미스나인 콘서트 무료나눔</h3>
-    <p class="small">
+    <p>
       📅 2026년 1월 31일 18시<br>
       📍 A구역 3열 · 2연석
     </p>
@@ -84,7 +106,7 @@
 
   <div class="ticket">
     <h3>2️⃣ 임영웅 대전 콘서트 무료나눔</h3>
-    <p class="small">
+    <p>
       📅 2026년 1월 4일<br>
       📍 가구역 · 2연석
     </p>
@@ -92,7 +114,7 @@
 
   <div class="ticket">
     <h3>3️⃣ 킥플립 광주 콘서트 무료나눔</h3>
-    <p class="small">
+    <p>
       📅 2026년 1월 31일<br>
       📍 A구역 2열 · 2연석
     </p>
@@ -100,7 +122,7 @@
 
   <div class="ticket">
     <h3>4️⃣ 킥플립 서울 콘서트 무료나눔</h3>
-    <p class="small">
+    <p>
       📅 2026년 1월 17일<br>
       📍 B구역 2열 · 2연석
     </p>
@@ -108,17 +130,13 @@
 </div>
 
 <div class="box">
-  <button class="tg-btn" onclick="location.href='https://t.me/mmppsj11'">
+  <button class="btn" onclick="location.href='https://t.me/mmppsj11'">
     📩 이벤트 참여하기 (텔레그램 바로 연결)
   </button>
-  <p class="small" style="margin-top:8px;">
-    버튼 클릭 시 텔레그램 <strong>@mmppsj11</strong> 채팅으로 이동합니다.<br>
-    메시지 도착 순서 기준 선착순입니다.
-  </p>
 </div>
 
 <footer>
-  문의 및 참여: 텔레그램 <strong>@mmppsj11</strong><br>
+  문의: 텔레그램 <strong>@mmppsj11</strong><br>
   메시지 도착 순서 기준 선착순
 </footer>
 
