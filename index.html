@@ -1,144 +1,125 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>콘서트 티켓 무료 나눔 이벤트</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  background: #0b0b0b;
-  color: #fff;
-}
-header {
-  background: linear-gradient(135deg, #ff0055, #6a00ff);
-  padding: 70px 20px;
-  text-align: center;
-}
-header h1 { font-size: 34px; margin-bottom: 10px; }
-header p { opacity: .9; }
-
-.container {
-  max-width: 1100px;
-  margin: -40px auto 40px;
-  padding: 0 15px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.ticket {
-  background: #111;
-  border-radius: 18px;
-  padding: 22px;
-  box-shadow: 0 15px 40px rgba(0,0,0,.6);
-}
-
-.ticket h2 { margin-bottom: 10px; font-size: 20px; }
-.info { font-size: 14px; line-height: 1.6; opacity: .85; }
-
-.ticket a {
-  display: block;
-  margin-top: 15px;
-  text-align: center;
-  background: #ff0055;
-  padding: 14px;
-  border-radius: 12px;
-  color: #fff;
-  text-decoration: none;
-  font-size: 15px;
-}
-
-.notice {
-  max-width: 900px;
-  margin: 40px auto;
-  font-size: 12px;
-  opacity: .6;
-  line-height: 1.7;
-  padding: 0 20px;
-}
-
-footer {
-  text-align: center;
-  font-size: 12px;
-  opacity: .4;
-  padding: 30px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>콘서트 티켓 무료나눔 이벤트</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 16px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .box {
+      background: #fff;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+    .ticket {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 12px;
+    }
+    .ticket h3 {
+      margin: 0 0 6px 0;
+      font-size: 16px;
+    }
+    .small {
+      font-size: 13px;
+      color: #555;
+      line-height: 1.5;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    .tg-btn {
+      background: #2AABEE;
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      font-size: 12px;
+      color: #777;
+      margin-top: 24px;
+    }
+  </style>
 </head>
 
 <body>
 
-<header>
-  <h1>🎉 콘서트 티켓 무료 나눔</h1>
-  <p>트위터 이벤트 참여로 무료 티켓 받으세요</p>
-</header>
+<h1>🎫 콘서트 티켓 무료나눔</h1>
 
-<div class="container">
-
-  <div class="ticket">
-    <h2>🎤 2026 스페셜 라이브</h2>
-    <div class="info">
-      일정: 2026.03.15 19:00<br>
-      장소: 올림픽공원 체조경기장<br>
-      수량: 2매
-    </div>
-    <a href="https://twitter.com/messages/compose?recipient_id=YOUR_ID&text=스페셜라이브%20이벤트%20참여합니다" target="_blank">
-      트위터 DM 참여
-    </a>
-  </div>
-
-  <div class="ticket">
-    <h2>🎶 K-POP FESTA</h2>
-    <div class="info">
-      일정: 2026.04.02 18:30<br>
-      장소: 고척 스카이돔<br>
-      수량: 3매
-    </div>
-    <a href="https://twitter.com/messages/compose?recipient_id=YOUR_ID&text=KPOP%20FESTA%20이벤트%20참여합니다" target="_blank">
-      트위터 DM 참여
-    </a>
-  </div>
-
-  <div class="ticket">
-    <h2>🎧 EDM NIGHT PARTY</h2>
-    <div class="info">
-      일정: 2026.05.10 20:00<br>
-      장소: 부산 벡스코<br>
-      수량: 1매
-    </div>
-    <a href="https://twitter.com/messages/compose?recipient_id=YOUR_ID&text=EDM%20NIGHT%20이벤트%20참여합니다" target="_blank">
-      트위터 DM 참여
-    </a>
-  </div>
-
-  <div class="ticket">
-    <h2>🎸 INDIE LIVE DAY</h2>
-    <div class="info">
-      일정: 2026.06.01 18:00<br>
-      장소: 홍대 라이브홀<br>
-      수량: 2매
-    </div>
-    <a href="https://twitter.com/messages/compose?recipient_id=YOUR_ID&text=INDIE%20LIVE%20이벤트%20참여합니다" target="_blank">
-      트위터 DM 참여
-    </a>
-  </div>
-
+<div class="box">
+  <h2>📌 이벤트 안내</h2>
+  <p class="small">
+    • 본 이벤트는 <strong>텔레그램 메시지 도착 순서 기준 선착순</strong>입니다.<br>
+    • 티켓별 수량 소진 시 즉시 마감됩니다.<br>
+    • 참여는 텔레그램 문의로만 받습니다.<br>
+    • 개인 주최 무료나눔 이벤트입니다.
+  </p>
 </div>
 
-<div class="notice">
-[이벤트 안내]<br>
-본 이벤트는 무료 나눔 이벤트로 구매와 무관합니다.<br>
-1인 1회 참여 가능하며 중복 참여 시 당첨이 취소될 수 있습니다.<br>
-당첨자는 트위터 DM으로 개별 안내됩니다.<br>
-티켓 양도 및 재판매는 금지됩니다.<br>
-본 이벤트는 트위터(X)와 무관하게 주최자가 단독 진행합니다.
+<div class="box">
+  <div class="ticket">
+    <h3>1️⃣ 프로미스나인 콘서트 무료나눔</h3>
+    <p class="small">
+      📅 2026년 1월 31일 18시<br>
+      📍 A구역 3열 · 2연석
+    </p>
+  </div>
+
+  <div class="ticket">
+    <h3>2️⃣ 임영웅 대전 콘서트 무료나눔</h3>
+    <p class="small">
+      📅 2026년 1월 4일<br>
+      📍 가구역 · 2연석
+    </p>
+  </div>
+
+  <div class="ticket">
+    <h3>3️⃣ 킥플립 광주 콘서트 무료나눔</h3>
+    <p class="small">
+      📅 2026년 1월 31일<br>
+      📍 A구역 2열 · 2연석
+    </p>
+  </div>
+
+  <div class="ticket">
+    <h3>4️⃣ 킥플립 서울 콘서트 무료나눔</h3>
+    <p class="small">
+      📅 2026년 1월 17일<br>
+      📍 B구역 2열 · 2연석
+    </p>
+  </div>
+</div>
+
+<div class="box">
+  <button class="tg-btn" onclick="location.href='https://t.me/mmppsj11'">
+    📩 이벤트 참여하기 (텔레그램 바로 연결)
+  </button>
+  <p class="small" style="margin-top:8px;">
+    버튼 클릭 시 텔레그램 <strong>@mmppsj11</strong> 채팅으로 이동합니다.<br>
+    메시지 도착 순서 기준 선착순입니다.
+  </p>
 </div>
 
 <footer>
-© 2026 EVENT PROMOTION
+  문의 및 참여: 텔레그램 <strong>@mmppsj11</strong><br>
+  메시지 도착 순서 기준 선착순
 </footer>
 
 </body>
