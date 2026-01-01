@@ -6,139 +6,134 @@
 <title>프리미엄 콘서트 이벤트</title>
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
+* {
+  box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
-  background: radial-gradient(circle at top, #1a1a1a, #000);
-  color: #f5f5f5;
 }
 
-/* 로딩 */
-#loading {
-  position: fixed;
-  inset: 0;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #222 0%, #000 70%);
+  color: #eee;
+  animation: fadeIn 1s ease;
 }
-.loader {
-  width: 50px;
-  height: 50px;
-  border: 3px solid #333;
-  border-top: 3px solid #d4af37;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  to { transform: rotate(360deg); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .container {
-  max-width: 430px;
-  margin: 0 auto;
-  padding: 20px 14px 60px;
+  max-width: 420px;
+  margin: auto;
+  padding: 20px;
 }
 
 /* 로고 */
 .logos {
   display: flex;
-  gap: 12px;
   justify-content: center;
-  margin-bottom: 14px;
+  gap: 14px;
+  margin-bottom: 18px;
 }
+
 .logos img {
   height: 42px;
   background: #fff;
-  padding: 6px 10px;
   border-radius: 10px;
+  padding: 6px 10px;
 }
 
-/* 공지 */
+/* 중앙 문구 */
 .notice {
-  border: 1px solid #d4af37;
-  border-radius: 14px;
+  border: 1px solid #c9a44d;
+  color: #f3d27a;
   padding: 14px;
+  border-radius: 14px;
   text-align: center;
-  color: #d4af37;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 0 18px rgba(201,164,77,0.15);
 }
 
 /* 카드 */
 .card {
-  background: linear-gradient(180deg, #1b1b1b, #0e0e0e);
+  background: linear-gradient(180deg, #1a1a1a, #0c0c0c);
   border-radius: 20px;
-  padding: 18px;
-  margin-bottom: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.6);
 }
+
 .card h3 {
-  font-size: 17px;
-  margin-bottom: 8px;
+  margin: 0 0 10px;
+  font-size: 18px;
 }
+
 .card p {
+  margin: 4px 0;
   font-size: 14px;
   color: #ccc;
-  line-height: 1.5;
 }
 
 /* 버튼 */
 .btn {
-  margin-top: 14px;
+  margin-top: 16px;
   display: block;
-  width: 100%;
   text-align: center;
-  padding: 14px 0;
+  padding: 16px;
   border-radius: 999px;
-  background: linear-gradient(135deg, #f5e08a, #d4af37);
-  color: #000;
-  font-weight: 800;
   text-decoration: none;
+  font-weight: 700;
+  color: #000;
+  background: linear-gradient(135deg, #f6e08b, #c9a44d);
+  box-shadow: 0 0 25px rgba(201,164,77,0.5);
 }
 
 /* 후기 */
-.review-section {
-  margin-top: 30px;
-}
 .review-title {
+  margin: 40px 0 12px;
+  font-size: 18px;
   font-weight: 700;
-  margin-bottom: 10px;
-}
-.review-box {
-  height: 220px;
-  overflow: hidden;
-  background: #0f0f0f;
-  border-radius: 14px;
-  padding: 12px;
-}
-.review {
-  font-size: 13px;
-  color: #ddd;
-  padding: 8px 0;
-  border-bottom: 1px solid #222;
 }
 
-/* 푸터 */
+.reviews {
+  background: #0b0b0b;
+  border-radius: 14px;
+  padding: 14px;
+  max-height: 180px;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.8);
+}
+
+.review {
+  padding: 10px 0;
+  border-bottom: 1px solid #222;
+  font-size: 13px;
+  color: #ddd;
+}
+
+.review:last-child {
+  border-bottom: none;
+}
+
+/* 하단 */
 .footer {
   text-align: center;
-  font-size: 12px;
+  margin: 30px 0 10px;
+  font-size: 11px;
   color: #777;
-  margin-top: 30px;
 }
 </style>
 </head>
 
 <body>
-<div id="loading"><div class="loader"></div></div>
-
 <div class="container">
 
   <!-- 로고 -->
   <div class="logos">
-    <img src="assets/cultureland.png" alt="컬쳐랜드 협업업체">
-    <img src="assets/ticketbay.png" alt="티켓베이 협업업체">
+    <img src="images/cultureland.png" alt="컬쳐랜드 협업업체">
+    <img src="images/ticketbay.png" alt="티켓베이 협업업체">
   </div>
 
   <!-- 안내 -->
@@ -146,78 +141,62 @@ body {
     다른 콘서트 무료나눔 및 대리티켓팅 문의 가능
   </div>
 
-  <!-- 이벤트 카드 -->
+  <!-- 콘서트 카드 -->
   <div class="card">
     <h3>프로미스나인 콘서트 무료나눔</h3>
-    <p>날짜: 2026년 1월 31일 18시<br>좌석: A구역 3열 2연석</p>
+    <p>날짜 : 2026년 1월 31일 18시</p>
+    <p>좌석 : A구역 3열 2연석</p>
     <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
   </div>
 
   <div class="card">
     <h3>임영웅 대전 콘서트 무료나눔</h3>
-    <p>날짜: 2026년 1월 4일<br>좌석: 가구역 2연석</p>
+    <p>날짜 : 2026년 1월 4일</p>
+    <p>좌석 : 가구역 2연석</p>
     <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
   </div>
 
   <div class="card">
     <h3>킥플립 광주 콘서트 무료나눔</h3>
-    <p>날짜: 2026년 1월 31일<br>좌석: A구역 2열 2연석</p>
+    <p>날짜 : 2026년 1월 31일</p>
+    <p>좌석 : A구역 2열 2연석</p>
     <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
   </div>
 
   <div class="card">
     <h3>킥플립 서울 콘서트 무료나눔</h3>
-    <p>날짜: 2026년 1월 17일<br>좌석: B구역 2열 2연석</p>
+    <p>날짜 : 2026년 1월 17일</p>
+    <p>좌석 : B구역 2열 2연석</p>
     <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
   </div>
 
   <!-- 후기 -->
-  <div class="review-section">
-    <div class="review-title">참여 후기</div>
-    <div class="review-box" id="reviewBox">
-
-      <!-- 상위 10개 동일 컨셉 -->
-      <div class="review">상품권 인증 하라해서 그냥 포기하려다가 해봤는데 인증 후 돈도 다시 들어오고 진짜 티켓도 와서 너무 좋았어요.</div>
-      <div class="review">처음엔 반신반의했는데 인증 후 바로 환불되고 실물 티켓 받아서 놀랐어요.</div>
-      <div class="review">상품권 인증이 걱정됐지만 끝나고 바로 반환돼서 신뢰 생겼어요.</div>
-      <div class="review">인증 절차 후 실제 공연 티켓 받아서 만족합니다.</div>
-      <div class="review">괜히 의심했네요… 결과적으로 완전 성공이었습니다.</div>
-      <div class="review">후기 보고 참여했는데 저도 동일하게 처리됐어요.</div>
-      <div class="review">인증금 다시 들어오는 거 확인하고 안심했어요.</div>
-      <div class="review">절차는 있었지만 결과가 확실해서 좋았습니다.</div>
-      <div class="review">처음 경험인데 문제없이 진행됐어요.</div>
-      <div class="review">티켓 실물 확인 후 진짜라는 걸 느꼈어요.</div>
-
-      <!-- 추가 후기 -->
-      <div class="review">응대가 빠르고 친절했어요.</div>
-      <div class="review">텔레그램 문의가 편했습니다.</div>
-      <div class="review">다음 이벤트도 참여할 예정이에요.</div>
-
-    </div>
+  <div class="review-title">참여 후기</div>
+  <div class="reviews" id="reviewBox">
+    <div class="review">상품권 인증하라 해서 포기하려다 해봤는데, 인증 후 돈도 다시 들어오고 진짜 티켓까지 받아서 놀랐어요.</div>
+    <div class="review">처음엔 의심했는데 인증 끝나고 환불 확인돼서 신뢰 생겼습니다.</div>
+    <div class="review">상품권 절차만 지나면 바로 처리돼서 생각보다 빨랐어요.</div>
+    <div class="review">티켓 실물 받고 나서야 진짜라는 걸 느꼈습니다.</div>
+    <div class="review">인증 때문에 고민했는데 결과적으로 너무 만족해요.</div>
+    <div class="review">후기 보고 참여했는데 저도 동일하게 진행됐어요.</div>
+    <div class="review">환불 확인하고 바로 안심됐습니다.</div>
+    <div class="review">절차는 있었지만 결과가 확실했어요.</div>
+    <div class="review">처음 경험인데 문제 없이 끝났습니다.</div>
+    <div class="review">무료나눔인데 이 정도 관리라서 믿음 갔어요.</div>
   </div>
 
   <div class="footer">
-    ※ 본 후기는 이벤트 페이지 연출용 예시입니다.<br>
-    © 프리미엄 이벤트 운영 페이지
+    모든 문의는 중복 참여를 방지하고자 텔레그램에서만 가능합니다.
   </div>
 
 </div>
 
 <script>
-/* 로딩 */
-window.onload = () => {
-  setTimeout(() => {
-    document.getElementById("loading").style.display = "none";
-  }, 700);
-};
-
-/* 후기 자동 스크롤 (0.2초) */
 const box = document.getElementById("reviewBox");
 setInterval(() => {
+  box.scrollTop += 1;
   if (box.scrollTop + box.clientHeight >= box.scrollHeight) {
     box.scrollTop = 0;
-  } else {
-    box.scrollTop += 1;
   }
 }, 200);
 </script>
