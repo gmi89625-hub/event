@@ -1,197 +1,177 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>콘서트 무료 나눔 이벤트</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>프리미엄 콘서트 이벤트</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      background: #f5f6fa;
-      color: #333;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;700&display=swap" rel="stylesheet">
 
-    .container {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 16px;
-    }
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Noto Sans KR', sans-serif; }
 
-    h1 {
-      text-align: center;
-      margin-bottom: 8px;
-    }
+body {
+  background: radial-gradient(circle at top, #1a1a1a, #000);
+  color: #f5f5f5;
+}
 
-    .subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 20px;
-      font-size: 14px;
-    }
+/* 로딩 */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.loader {
+  width: 60px;
+  height: 60px;
+  border: 4px solid #333;
+  border-top: 4px solid #d4af37;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
 
-    .notice {
-      background: #fff3cd;
-      border-radius: 12px;
-      padding: 14px;
-      font-size: 14px;
-      margin-bottom: 20px;
-    }
+/* 레이아웃 */
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 60px;
+}
 
-    .section {
-      background: #ffffff;
-      border-radius: 14px;
-      padding: 16px;
-      margin-bottom: 20px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
+/* 상단 로고 */
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+.logos img {
+  height: 36px;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
 
-    .section h2 {
-      margin-top: 0;
-      font-size: 18px;
-    }
+/* 중앙 문구 */
+.notice {
+  background: linear-gradient(135deg, #2a2a2a, #111);
+  border: 1px solid #d4af3755;
+  border-radius: 14px;
+  padding: 14px;
+  text-align: center;
+  font-weight: 600;
+  color: #e6c76a;
+  margin-bottom: 24px;
+}
 
-    .ticket {
-      border: 1px solid #eee;
-      border-radius: 10px;
-      padding: 12px;
-      margin-bottom: 12px;
-      background: #fafafa;
-    }
+/* 카드 */
+.card {
+  background: linear-gradient(180deg, #1e1e1e, #111);
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 18px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+.card h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+.card p {
+  font-size: 14px;
+  color: #ccc;
+  margin-bottom: 4px;
+}
 
-    .ticket strong {
-      display: block;
-      margin-bottom: 4px;
-    }
+/* 버튼 */
+.btn {
+  margin-top: 14px;
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #000;
+  background: linear-gradient(135deg, #d4af37, #f5e08a);
+  box-shadow: 0 8px 20px rgba(212,175,55,0.5);
+}
+.btn:active { transform: scale(0.97); }
 
-    .btn {
-      display: block;
-      width: 100%;
-      background: #6c5ce7;
-      color: #fff;
-      text-align: center;
-      padding: 14px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    /* 후기 */
-    .review-box {
-      overflow: hidden;
-      height: 260px;
-      position: relative;
-    }
-
-    .review-list {
-      position: absolute;
-      width: 100%;
-    }
-
-    .review {
-      background: #f8f9ff;
-      border-radius: 10px;
-      padding: 10px;
-      margin-bottom: 8px;
-      font-size: 14px;
-    }
-
-    footer {
-      text-align: center;
-      font-size: 12px;
-      color: #999;
-      margin-top: 20px;
-      padding-bottom: 20px;
-    }
-  </style>
+/* 푸터 */
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #777;
+  margin-top: 40px;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
 
-    <h1>🎟️ 콘서트 무료 나눔 이벤트</h1>
-    <div class="subtitle">신생 대리티켓팅 업체 주최 · 선착순</div>
+<!-- 로딩 -->
+<div id="loading">
+  <div class="loader"></div>
+</div>
 
-    <div class="notice">
-      ✔ 선착순 무료 나눔<br/>
-      ✔ 후기 작성 시 참여 가능<br/>
-      ✔ 문의는 텔레그램만 받습니다
-    </div>
+<div class="container" style="display:none;" id="main">
 
-    <!-- 무료 나눔 -->
-    <div class="section">
-      <h2>📌 진행 중인 무료 나눔</h2>
-
-      <div class="ticket">
-        <strong>프로미스나인 콘서트 무료 나눔</strong>
-        날짜: 2026년 1월 31일 18시<br/>
-        구역: A구역 3열 2연석
-      </div>
-
-      <div class="ticket">
-        <strong>임영웅 대전 콘서트 무료 나눔</strong>
-        날짜: 2026년 1월 4일<br/>
-        구역: 가구역 2연석
-      </div>
-
-      <div class="ticket">
-        <strong>킥플립 광주 콘서트 무료 나눔</strong>
-        날짜: 2026년 1월 31일<br/>
-        구역: A구역 2열 2연석
-      </div>
-
-      <div class="ticket">
-        <strong>킥플립 서울 콘서트 무료 나눔</strong>
-        날짜: 2026년 1월 17일<br/>
-        구역: B구역 2열 2연석
-      </div>
-
-      <a class="btn" href="https://t.me/mmppsj11" target="_blank">
-        텔레그램으로 문의하기
-      </a>
-    </div>
-
-    <!-- 후기 -->
-    <div class="section">
-      <h2>💬 참여 후기</h2>
-
-      <div class="review-box">
-        <div class="review-list" id="reviews">
-          <div class="review">상품권 인증 하라해서 걱정됐는데 진짜 반환도 되고 무료나눔도 받아서 좋았어요</div>
-          <div class="review">선착순이라 빨리 문의하길 잘했어요</div>
-          <div class="review">텔레그램 응대 빠르고 친절했어요</div>
-          <div class="review">처음엔 반신반의했는데 실제로 받았습니다</div>
-          <div class="review">무료라 기대 안 했는데 좌석도 좋았어요</div>
-          <div class="review">지인한테도 추천했어요</div>
-          <div class="review">생각보다 진행이 깔끔해서 놀랐어요</div>
-          <div class="review">후기 남기고 바로 안내받았어요</div>
-          <div class="review">다음에도 참여하고 싶어요</div>
-          <div class="review">응답이 빨라서 좋았습니다</div>
-          <!-- 복제용 -->
-        </div>
-      </div>
-    </div>
-
-    <footer>
-      © 2026 Event Page
-    </footer>
-
+  <!-- 로고 -->
+  <div class="logos">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Cultureland_logo.svg" alt="컬쳐랜드">
+    <img src="https://ticketbay.co.kr/images/common/logo.png" alt="티켓베이">
   </div>
 
-  <!-- 자동 스크롤 -->
-  <script>
-    const list = document.getElementById("reviews");
-    let y = 0;
+  <!-- 중앙 문구 -->
+  <div class="notice">
+    다른 콘서트 무료나눔 및 대리티켓팅 문의 가능
+  </div>
 
-    setInterval(() => {
-      y -= 1;
-      if (Math.abs(y) >= list.scrollHeight / 2) {
-        y = 0;
-      }
-      list.style.transform = `translateY(${y}px)`;
-    }, 200); // 0.2초
-  </script>
+  <!-- 카드들 -->
+  <div class="card">
+    <h3>프로미스나인 콘서트 무료나눔</h3>
+    <p>날짜 : 2026년 1월 31일 18시</p>
+    <p>좌석 : A구역 3열 2연석</p>
+    <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
+  </div>
+
+  <div class="card">
+    <h3>임영웅 대전 콘서트 무료나눔</h3>
+    <p>날짜 : 2026년 1월 4일</p>
+    <p>좌석 : 가구역 2연석</p>
+    <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
+  </div>
+
+  <div class="card">
+    <h3>킥플립 광주 콘서트 무료나눔</h3>
+    <p>날짜 : 2026년 1월 31일</p>
+    <p>좌석 : A구역 2열 2연석</p>
+    <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
+  </div>
+
+  <div class="card">
+    <h3>킥플립 서울 콘서트 무료나눔</h3>
+    <p>날짜 : 2026년 1월 17일</p>
+    <p>좌석 : B구역 2열 2연석</p>
+    <a class="btn" href="https://t.me/mmppsj11">이벤트 참여하기</a>
+  </div>
+
+  <footer>© 프리미엄 이벤트 운영 페이지</footer>
+</div>
+
+<script>
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    document.getElementById("loading").style.display = "none";
+    document.getElementById("main").style.display = "block";
+  }, 900);
+});
+</script>
+
 </body>
 </html>
